@@ -1,7 +1,10 @@
 package com.hencoder.hencoderpracticedraw1.practice;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -20,10 +23,13 @@ public class Practice7DrawRoundRectView extends View {
         super(context, attrs, defStyleAttr);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
 //        练习内容：使用 canvas.drawRoundRect() 方法画圆角矩形
+        Paint paint = new Paint();
+        canvas.drawRoundRect(300, 300, 900, 600, 50, 50, paint);
     }
 }
